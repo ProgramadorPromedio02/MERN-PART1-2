@@ -1,0 +1,30 @@
+### Get notes
+GET http://localhost:4000/api/notes HTTP/1.1
+Content-Type: application/json
+
+### Create note
+POST http://localhost:4000/api/notes HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "content": "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees.",
+  "author": "Robert C. Martin",
+  "date": "{{$localDatetime iso8601}}"
+}
+
+### Update a note for id
+@id = 6660768a30dce2b0c6a34b77
+PUT http://localhost:4000/api/notes/{{id}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Clean Code 2",
+  "content": "Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.",
+  "author":"Robert C. Martin Junior",
+  "date": "{{$localDatetime iso8601}}"
+}
+
+### Delete a note for id
+DELETE http://localhost:4000/api/notes/{{id}} HTTP/1.1
+Content-Type: application/json
